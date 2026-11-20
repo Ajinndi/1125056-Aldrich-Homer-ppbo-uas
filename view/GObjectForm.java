@@ -24,7 +24,7 @@ public abstract class GObjectForm<T extends GObject> {
         if(record.isEmpty()) System.out.println("data masih kosong");
         record.add(data);
 
-        return record;
+        return;
     }
 
     protected abstract String[] getFields();

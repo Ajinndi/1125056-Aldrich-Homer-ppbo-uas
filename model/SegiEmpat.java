@@ -4,8 +4,8 @@ public class SegiEmpat extends Object2D {
     private double panjang;
     private double lebar;
 
-    public SegiEmpat(double panjang, double lebar, String label) {
-        super(label);
+    public SegiEmpat(double panjang, double lebar, String label, String detail) {
+        super(label, detail);
         this.panjang = panjang;
         this.lebar = lebar;
     }
@@ -35,16 +35,17 @@ public class SegiEmpat extends Object2D {
     }
 
     @Override
-    public String getPrintDetail(String detail) {
-        return detail;
+    public String getPrintDetail() {
+        return "Segi Empat";
     }
 
     @Override
     public String[][] getKeyValueDetails() {
         return new String[][] {
-            {},
-            {},
-            {}
-        }
+            {"label", "Segi Empat inputan"},
+            {"panjang", panjang},
+            {"lebar", lebar},
+            {"tipe", getPrintDetail()}
+        };
     }
 }
