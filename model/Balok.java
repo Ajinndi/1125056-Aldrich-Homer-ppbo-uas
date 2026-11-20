@@ -1,6 +1,6 @@
 package model;
 
-public class Balok extends Object2D {
+public class Balok extends Object3D {
     private double panjang;
     private double lebar;
     private double tinggi;
@@ -33,26 +33,27 @@ public class Balok extends Object2D {
     }
 
     @Override
-    public double hitungLuas() {
+    public double hitungVolume() {
         return panjang * lebar * tinggi;
     }
 
     @Override
-    public double hitungKeliling() {
-        return 2 * (panjang + lebar);
+    public double hitungLuasPermukaan() {
+        return 2 * (panjang * lebar + panjang * tinggi + tinggi * lebar);
     }
 
     @Override
     public String getPrintDetail() {
-        return "Segi Empat";
+        return "Balok";
     }
 
     @Override
     public String[][] getKeyValueDetails() {
         return new String[][] {
-            {"label", "Segi Empat inputan"},
-            {"panjang", panjang},
+            {"label", "Balok inputan"},
+            {"panjang", super.getPanjang()},
             {"lebar", lebar},
+            {"tinggi", tinggi},
             {"tipe", getPrintDetail()}
         };
     }

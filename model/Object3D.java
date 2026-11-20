@@ -1,12 +1,22 @@
 package model;
 
-import view.GObjectForm;
+public abstract class Object3D extends GObject {
+    private String detail;
 
-public abstract class Object3D extends GObjectForm {
-    public Object3D(String label) {
+    public Object3D(String label, String detail) {
         super(label);
+        this.detail = detail;
+    }
+
+    public String getDetail() {
+        return detail;
     }
 
     public abstract double hitungLuasPermukaan();
     public abstract double hitungVolume();
+
+    @Override
+    public String getPrintDetail() {
+        return detail;
+    }
 }
