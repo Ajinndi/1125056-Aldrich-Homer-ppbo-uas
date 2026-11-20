@@ -1,12 +1,11 @@
 package model;
 
 import java.util.*;
-import util.InputUtil;
 
-public abstract class GObjectForm<T> {
+public abstract class GObject {
     private String label;
 
-    public GObjectForm(String label) {
+    public GObject(String label) {
         this.label = label;
     }
 
@@ -18,4 +17,6 @@ public abstract class GObjectForm<T> {
     }
 
     public abstract String[][] getKeyValueDetails();
+
+    public abstract String getPrintDetail();
 }

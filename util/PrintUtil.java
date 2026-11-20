@@ -1,8 +1,10 @@
 package util;
 
-import java.util.Scanner;
+import java.util.*;
 
-public class InputUtil {
+import model.keyValueDetailable;
+
+public class PrintUtil extends GObjectForm implements keyValueDetailable {
     private static Scanner sc = new Scanner(System.in);
 
     public static int readInt(String message) {
@@ -19,4 +21,7 @@ public class InputUtil {
         System.out.print(message);
         return sc.nextLine();
     }
+
+    @Override
+    public static void printGObjectDetail() {}
 }

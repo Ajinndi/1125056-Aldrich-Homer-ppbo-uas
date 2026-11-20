@@ -1,5 +1,7 @@
 package model;
 
+import view.GObjectForm;
+
 public abstract class Object3D extends GObjectForm {
     public Object3D(String label) {
         super(label);

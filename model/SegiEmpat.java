@@ -1,26 +1,26 @@
 package model;
 
 public class SegiEmpat extends Object2D {
-    private double panjang;
-    private double lebar;
+    private String panjang;
+    private String lebar;
 
-    public SegiEmpat(double panjang, double lebar, String label) {
+    public SegiEmpat(String panjang, String lebar, String label) {
         super(label);
         this.panjang = panjang;
         this.lebar = lebar;
     }
 
-    public double getPanjang() {
+    public String getPanjang() {
         return panjang;
     }
-    public double getLebar() {
+    public String getLebar() {
         return lebar;
     }
 
-    public void setPanjang(double panjang) {
+    public void setPanjang(String panjang) {
         this.panjang = panjang;
     }
-    public void setLebar(double lebar) {
+    public void setLebar(String lebar) {
         this.lebar = lebar;
     }
 
@@ -32,5 +32,15 @@ public class SegiEmpat extends Object2D {
     @Override
     public double hitungKeliling() {
         return 2 * (panjang + lebar);
+    }
+
+    @Override
+    public String getPrintDetail(String detail) {
+        return detail;
+    }
+
+    @Override
+    public String[][] getKeyValueDetails() {
+        return 
     }
 }
