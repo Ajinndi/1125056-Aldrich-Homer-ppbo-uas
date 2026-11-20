@@ -1,0 +1,10 @@
+package model;
+
+public abstract class Object2D extends GObjectForm {
+    public Object2D(String label) {
+        super(label);
+    }
+
+    public abstract double hitungLuas();
+    public abstract double hitungKeliling();
+}
