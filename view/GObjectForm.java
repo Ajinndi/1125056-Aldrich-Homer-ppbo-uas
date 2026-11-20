@@ -11,18 +11,25 @@ public abstract class GObjectForm<T extends GObject> {
         record = new ArrayList<>();
     }
 
-    public GObjectForm(String label) {
-        this.label = label;
+    public T showInsertForm() {
+        String[] fields = getFields();
+        String[] values = new String[fields.length];
+        
+        T label;
+        for (int i = 0; i < fields.length; i++) {
+            values[i] = PrintUtil.readLine("Masukkan " + fields[i] + " dan " + label + ": ");
+        }
+
+        T data = constructModelFromValues(label, values);
+        if(record.isEmpty()) System.out.println("data masih kosong");
+        record.add(data);
+
+        return record;
     }
 
-    public String getLabel() {
-        return label;
-    }
-    public void setLabel(String label) {
-        this.label = label;
-    }
+    protected abstract String[] getFields();
+    
+    protected abstract T constructModelFromValues(String label, double[] values);
 
-    public abstract String[][] getKeyValueDetails();
-
-    public abstract String getPrintDetail();
+    protected abstract double[] extractValuesFromModel(T model);
 }

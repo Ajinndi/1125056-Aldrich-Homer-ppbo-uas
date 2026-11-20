@@ -12,11 +12,6 @@ public class PrintUtil extends GObjectForm implements keyValueDetailable {
         return Integer.parseInt(sc.nextLine());
     }
 
-    public static double readDouble(String message) {
-        System.out.print(message);
-        return Double.parseDouble(sc.nextLine());
-    }
-
     public static String readLine(String message) {
         System.out.print(message);
         return sc.nextLine();
